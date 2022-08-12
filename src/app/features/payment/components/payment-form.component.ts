@@ -28,6 +28,7 @@ export class PaymentFormComponent implements OnDestroy {
       paymentAmount: new FormControl(null, [Validators.required, ])
     });
 
+    // listens for value changes to update errors when the payment amount is greater than account balance
     this.paymentFormGroup.controls['paymentAmount'].valueChanges.pipe(takeUntil(this.destroy$)).subscribe((paymentAmountValue: number)=>{
       if(paymentAmountValue > this.paymentFormGroup.value.accountBalance) {
         this.paymentFormGroup.get('paymentAmount')?.setErrors({paymentInvalid: true});
