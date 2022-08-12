@@ -1,0 +1,38 @@
+<div class="feature-container">
+<div class="feature-container__account">
+ <div class="feature-container__account__form">
+  <h1 class="feature-header">User Account</h1>
+  <app-payment-form (paymentSubmission$)="onPaymentSuccess($event)"></app-payment-form>
+ </div>
+
+  <ul class="feature-container__account__summary"
+  [ngClass]="{'feature-container__account__summary--separator': accountSummary}"
+  *ngIf="accountSummary">
+      <h1 class="feature-header">Payment Summary</h1>
+    <li>
+      <b>Name: </b>
+      {{ accountSummary.name }}
+    </li>
+    <li>
+      <b>Email: </b>
+      {{ accountSummary.email }}
+    </li>
+    <li>
+      <b>Account Number: </b>
+      {{ accountSummary.accountNumber }}
+    </li>
+    <li>
+      <b>Account Balance: </b>
+      {{ accountSummary.accountBalance }}
+    </li>
+    <li>
+      <b>Payment Amount: </b>
+      {{ accountSummary.paymentAmount }}
+    </li>
+    <li>
+      <b>New Account Balance: </b>
+      {{ accountSummary.newPaymentBalance }}
+    </li>
+  </ul>
+</div>
+</div>

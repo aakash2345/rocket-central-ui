@@ -1,0 +1,44 @@
+
+.home-page-wrapper {
+  margin: 0;
+  padding: 0;
+  font-family: Sans-Serif;
+  line-height: 1.5em;
+
+  &__header {
+    background: #fff;
+    height: auto;
+    padding: 12px 64px;
+    &__site-logo {
+      width: 250px
+    }
+  }
+
+  &__footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    clear: left;
+    width: 100%;
+    background: #000;
+    text-align: center;
+    padding: 64px 0;
+    display: flex;
+    justify-content: center;
+    &__logo{
+      width: 250px;
+      height: fit-content;
+    }
+  }
+
+  &__wrapper {
+    background: #f7f7f7;
+    overflow: hidden;
+  }
+
+  &__content {
+    padding: 64px 10%;
+  }
+
+}

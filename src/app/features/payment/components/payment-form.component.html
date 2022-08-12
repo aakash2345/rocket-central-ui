@@ -1,0 +1,79 @@
+<div class="form-container">
+  <form id="account-form" [formGroup]="paymentFormGroup" (ngSubmit)="onSubmit()">
+    <div class="input-wrapper">
+      <label for="Full Name"> Full Name </label>
+      <input id="name" type="text" formControlName="name" />
+      <div *ngIf="
+          paymentFormGroup.controls['name'].errors &&
+          paymentFormGroup.controls['name'].touched
+        " class="invalid-feedback">
+        <div *ngIf="paymentFormGroup.controls['name'].errors['required']">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="Email"> Email </label>
+      <input id="email" type="email" formControlName="email" />
+      <div *ngIf="
+          paymentFormGroup.controls['email'].errors &&
+          paymentFormGroup.controls['email'].touched
+        " class="invalid-feedback">
+        <div id="invalid-email-msg" *ngIf="paymentFormGroup.controls['email'].invalid">
+          Email is invalid. Make sure the format is correct
+          (username@domain.tld)
+        </div>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="accountNumber"> Account Number </label>
+      <input id="accountNumber" type="number" formControlName="accountNumber" />
+      <div *ngIf="
+          paymentFormGroup.controls['accountNumber'].errors &&
+          paymentFormGroup.controls['accountNumber'].touched
+        " class="invalid-feedback">
+        <div *ngIf="paymentFormGroup.controls['accountNumber'].errors['required']">
+          Account Number is required
+        </div>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="accountBalance"> Account Balance </label>
+      <input id="accountBalance" type="number" formControlName="accountBalance" />
+      <div *ngIf="
+          paymentFormGroup.controls['accountBalance'].errors &&
+          paymentFormGroup.controls['accountBalance'].touched
+        " class="invalid-feedback">
+        <div *ngIf="paymentFormGroup.controls['accountBalance'].errors['required']">
+          Account Balance is required
+        </div>
+      </div>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="paymentAmount"> Payment Amount </label>
+      <input id="paymentAmount" type="number" formControlName="paymentAmount" />
+      <div *ngIf="
+          paymentFormGroup.controls['paymentAmount'].errors &&
+          paymentFormGroup.controls['paymentAmount'].touched
+        " class="invalid-feedback">
+        <div *ngIf="paymentFormGroup.controls['paymentAmount'].errors['required']">
+          Payment Amount is required
+        </div>
+        <div *ngIf="
+            paymentFormGroup.controls['paymentAmount'].errors['paymentInvalid']
+          ">
+          Please check the payable amount. Enter payment amount less than
+          Account Balance.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="paymentFormGroup.invalid">
+      Submit Payment
+    </button>
+  </form>
+</div>

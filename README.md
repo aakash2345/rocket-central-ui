@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+# Dev Documentation
+
+## Components
+
+Created SCAM `PaymentComponent` and `PaymentFormComponent` to emulate tree-shakable components
+
+## SCSS
+
+Added component specific SCSS files and used `Block Element Modifiers`
+
+## Unit tests
+
+Covered unit tests for the business logic
+
